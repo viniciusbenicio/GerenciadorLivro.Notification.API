@@ -1,0 +1,6 @@
+@GerenciadorLivro.Notification.API_HostAddress = http://localhost:5235
+
+GET {{GerenciadorLivro.Notification.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
