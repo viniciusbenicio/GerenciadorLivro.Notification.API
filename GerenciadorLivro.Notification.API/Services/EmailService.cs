@@ -25,7 +25,7 @@ namespace GerenciadorLivro.Notification.API.Services
 
             try
             {
-                smptClient.Send(mail);
+                await smptClient.SendMailAsync(mail);
             }
             catch (Exception)
             {
