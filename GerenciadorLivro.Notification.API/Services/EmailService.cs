@@ -7,7 +7,7 @@ namespace GerenciadorLivro.Notification.API.Services
 {
     public class EmailService : IEmailService
     {
-        public bool Send(string toName, string toEmail, string subject, string body, string fromName = "", string fromEmail = "")
+        public async Task<bool> Send(string toName, string toEmail, string subject, string body, string fromName = "", string fromEmail = "")
         {
             var smptClient = new SmtpClient(Configuration.Smtp.Host, Configuration.Smtp.Port);
 
