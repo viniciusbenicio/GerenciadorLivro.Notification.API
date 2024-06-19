@@ -1,4 +1,5 @@
 using GerenciadorLivro.Notification.API.Consumers;
+using GerenciadorLivro.Notification.API.DTO;
 using GerenciadorLivro.Notification.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,10 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddHostedService<SendEmailConsumer>();
 
 var app = builder.Build();
+
+var smtp = new Configuration.SmtpConfiguration();
+app.Configuration.GetSection("Smtp").Bind(smtp);
+Configuration.Smtp = smtp;
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

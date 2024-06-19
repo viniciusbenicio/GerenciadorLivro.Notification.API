@@ -15,7 +15,7 @@ namespace GerenciadorLivro.Notification.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post()
         {
-            var result = await _emailService.Send("ToName", "ToEmail","ToSubject", "ToBody", "FromName", "FromEmail");
+            var result = await _emailService.Send("ToName", "vinicius.benicio97@gmail.com","ToSubject", "ToBody", "FromName", "vinicius.benicio97@gmail.com");
 
             if (!result)
             {
