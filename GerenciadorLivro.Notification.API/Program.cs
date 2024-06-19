@@ -1,3 +1,4 @@
+using GerenciadorLivro.Notification.API.Consumers;
 using GerenciadorLivro.Notification.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddHostedService<SendEmailConsumer>();
 
 var app = builder.Build();
 
